@@ -80,5 +80,5 @@ func main() {
 	<-sc
 
 	// Flush the logging buffer (we don't care if this fails)
-	logger.Sync()
+	defer logger.Sync()
 }
