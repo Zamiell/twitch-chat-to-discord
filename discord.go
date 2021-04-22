@@ -93,7 +93,7 @@ func discordSend(to string, msg string) {
 	if _, err := discord.ChannelMessageSend(to, msg); err != nil {
 		// Occasionally, sending messages to Discord can time out; if this occurs,
 		// do not bother retrying, since losing a single message is fairly meaningless
-		logger.Info("Failed to send \""+msg+"\" to Discord:", err)
+		logger.Infof("Failed to send \"%s\" to Discord: %s", msg, err.Error())
 		return
 	}
 }
